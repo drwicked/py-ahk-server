@@ -130,13 +130,7 @@ class SimpleHttpServer():
     self.server_thread = threading.Thread(target=self.server.serve_forever)
     self.server_thread.daemon = True
     self.server_thread.start()
-    strip.begin()
-    # show a rainbow on server startup
-    colorWipe(strip, Color(255, 0, 0))
-    colorWipe(strip, Color(0, 255, 0))
-    colorWipe(strip, Color(0, 0, 255))
-    colorWipe(strip, Color(0,0,0), 10)
-    print "strip loaded"
+    print "server started"
  
   def waitForThread(self):
     self.server_thread.join()
